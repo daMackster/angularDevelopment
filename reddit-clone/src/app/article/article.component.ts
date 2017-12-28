@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-
+import {Article} from '../article';
 
 @Component({
   selector: 'app-article',
@@ -11,12 +11,12 @@ export class ArticleComponent implements OnInit {
 
   @Input() article: Article;
 
-  upvote(){
-    this.article.votes = this.article.votes + 1;
+  upvote() {
+    this.article.upVote();
   }
 
-  downvote(){
-    this.article.votes = (this.article.votes > 0)?this.article.votes - 1 : 0;
+  downvote() {
+    this.article.downVote();
   }
 
   ngOnInit() {
